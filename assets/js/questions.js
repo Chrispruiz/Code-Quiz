@@ -2,19 +2,19 @@
 let questions = [
     {
         numb: 1,
-        question: "1Question",
-        answer: "answer1",
+        question: "What is 1+1?",
+        answer: "the",
         options: [
-            "answer1",
-            "answer2",
-            "answer3",
-            "answer4"
+            "the",
+            "1",
+            "3",
+            "4"
         ]
     },
     {
         numb: 2,
         question: "2Question",
-        answer: "answer1",
+        answer: "answer2",
         options: [
             "answer1",
             "answer2",
@@ -25,7 +25,7 @@ let questions = [
     {
         numb: 3,
         question: "3Question",
-        answer: "answer1",
+        answer: "answer3",
         options: [
             "answer1",
             "answer2",
@@ -36,7 +36,7 @@ let questions = [
     {
         numb: 4,
         question: "4Question",
-        answer: "answer1",
+        answer: "answer4",
         options: [
             "answer1",
             "answer2",
@@ -47,7 +47,7 @@ let questions = [
     {
         numb: 5,
         question: "5Question",
-        answer: "answer1",
+        answer: "answer5",
         options: [
             "answer1",
             "answer2",

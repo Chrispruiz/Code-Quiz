@@ -154,7 +154,7 @@ section .option_list .option:hover {
     justify-content: space-between;
 }
 
-footer .next_btn {
+footer {
     height: 40px;
     padding: 0 13px;
     font-size: 18px;
@@ -169,7 +169,7 @@ footer .next_btn {
     transition: all .3s ease;
 }
 
-footer .next_btn:hover {
+footer {
     background: #cce5ff;
 }
 
@@ -186,6 +186,13 @@ footer .next_btn:hover {
     opacity: 0;
     pointer-events: none;
     transform: translate(-50%, -50%) scale(0.9);
+}
+
+.quiz_box.quiz_box.activeQuiz, .result_box.activeResult {
+    z-index: 5;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, %50) scale(1);
 }
 
 .result_box .completed_text {
