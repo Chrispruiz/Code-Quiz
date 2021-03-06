@@ -1,7 +1,7 @@
 // required elements
 const start_btn = document.querySelector(".start_btn button");
 const quiz_box = document.querySelector(".quiz_box");
-const timeCount = quiz_box.querySelector(".timer .timer_sec");
+const timeCount = document.querySelector(".timer .timer_sec");
 
 
 
@@ -14,6 +14,7 @@ start_btn.onclick = ()=> {
 
 let numb = 0;
 let counter;
+
 
 const option = quiz_box.querySelector(".option_list");
 const result_box = document.querySelector(".result_box");
@@ -45,13 +46,19 @@ function showQuestions(index) {
 
     const option = option_list.querySelectorAll('.option');
     for (i = 0; i < option.length; i++) {
-        option[i].setAttribute('onlick', 'optionSelected(this)');
+        option[i].setAttribute('onclick', 'optionSelected(this)');
     } 
 }
 
+// answer selected 
 function optionSelected(answer) {
-    let userAns = options.textContent;
-    console.log(userAns);
+    let userAns = answer.textContent;
+    let correctAns = questions[numb].answer;
+    if(userAns !== correctAns) {
+        clearInterval(counter);
+        timeCount.textContent -= 25;
+        startTimer(timeCount.textContent);
+    };
 }
 
 // if quitQuiz button clicked
@@ -64,7 +71,7 @@ function showResultBox() {
     result_box.classList.add("activeResult"); // show result box
     
     const score_text = document.querySelector(".score_text");
-    let score_tag = 'Your score is' + counter;
+    let score_tag = 'Your score is: ' + timeCount.textContent;
     score_text.innerHTML = score_tag;
     
 }
@@ -75,10 +82,10 @@ function startTimer(time){
         timeCount.textContent = time;
         time--;
         if (time < 0) {
-            clearInterval(counter)
+            setInterval(counter); 
             quiz_box.classList.remove("activeQuiz");
             result_box.classList.add("activeResult");
-        }
-    }
+        };
+    };
 }
 

@@ -44,13 +44,16 @@
 
     <!-- result box -->
     <div class="result_box">
-        <div class="complete_text">You've completed the Quiz!</div>
-        <div class="score_text">
-            <span>Your Final Score is <p>22</p></span>
-        </div>
+        <div class="complete_text"><h2>You've completed the Quiz!</h2></div>
+        <div class="score_text"><h3>Your Final Score is<p>22</p></h3></div>
+        <form class="end-form-container">
+            <div id="end-text">Enter your name below to save your score!</div>
+            <input type="text" name="name" id="username" placeholder="Enter your name">
+            <button class="btn" id="saveScoreBtn" type="submit">Submit</button>
+        </form>
         <div class="buttons">
             <button class="restart">Go Back</button>
-            <button class="scores">High Scores</button>
+            <button> <a href="high-score.html" class="score_btn">High Scores</a></button>
         </div>
     </div>
     <script src="./assets/js/script.js"></script>
