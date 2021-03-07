@@ -14,6 +14,7 @@ start_btn.onclick = ()=> {
 
 let numb = 0;
 let counter;
+var score = [];
 
 
 const option = quiz_box.querySelector(".option_list");
@@ -56,7 +57,7 @@ function optionSelected(answer) {
     let correctAns = questions[numb].answer;
     if(userAns !== correctAns) {
         clearInterval(counter);
-        timeCount.textContent -= 5;
+        timeCount.textContent -= 10;
         startTimer(timeCount.textContent);
     };
 }
@@ -88,26 +89,17 @@ function startTimer(time){
             result_box.classList.add("activeResult");
         };
     };
-}
-var saveTasks = function() {
-    localStorage.setItem('test');
+    localStorage.setItem("score", JSON.stringify(timeCount.textContent));
 }
 
-/* saveScorebtn.onclick = ()=> {
-  
-    // check localStorage for high score, if it's not there, use 0
-    var highScore = localStorage.getItem(timeCount.textContent);
-    if (highScore === null) {
-      highScore = 0;
-    }
-    // if player has higher score than the old high score, player has new high score
-    if (timeCount.textContent > highScore) {
-      localStorage.setItem("highscore", timeCount.textContent);
-      localStorage.setItem("name", userName);
-    } 
-  }; */
-  
-/* const username = document.querySelector('#user_list');
+/* function showScore() {
+    const user_list = document.querySelector(".user_list");    
+    let name = localStorage.getItem("score", JSON.stringify(timeCount.textContent));
+    user_list.innerHTML = name;
+       
+}
+
+const username = document.querySelector('#user_list');
 const saveScoreBtn = document.querySelector('#saveScoreBtn');
 const finalScore = document.querySelector('#finalScore');
 const mostRecentScore = document.querySelector('#mostRecentScore');

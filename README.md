@@ -4,6 +4,7 @@ This is a coding quiz game that tracks your score and ranks it.
 # Built With
 * HTML
 * CSS
+* JavaScript
 
 1. This is a timed quiz that deducts time if an answer is answered incorrectly.
 2. Once the timer gets to zero or all questions are answered, the game ends and the user is asked to enter their name so it can be ranked.
